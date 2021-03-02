@@ -29,4 +29,10 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+.search > .spBtn, .addArea > .spBtn { 
+  color: #FC2121; text-decoration: none; margin-left: 1rem; display: inline-block;
+  padding: .4rem; border: 3px solid;
+}
+.addArea > .spBtn { margin-left: 0; margin-top: 2rem; }
 </style>

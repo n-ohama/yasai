@@ -14,8 +14,8 @@
       <div class="yasaiKikan">
         <input type="number" v-model="first"> 月 ~ <input type="number" v-model="end"> 月
       </div>
-
-      <button @click="addYasai">追加</button>
+      
+      <a class="spBtn" href="#" @click="addYasai"><i class="fas fa-cart-plus"></i> 追加</a>
     </div>
   </div>
 </template>

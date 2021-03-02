@@ -9,7 +9,7 @@
     <label for="search">名前で検索</label>
     <div class="search">
       <input type="text" id="search" v-model="searchWord">
-      <a href="#" @click="search"><i class="fa fa-search"></i> Search</a>
+      <a href="#" @click="search" class="spBtn"><i class="fa fa-search"></i> Search</a>
     </div>
     <!-- 検索結果エリア -->
     <div class="resultArea" v-show="getVuexResult.name && !isError">
@@ -85,7 +85,6 @@ ul { list-style-type: none; padding: 0; }
 li { display: inline-block; margin: 0 10px; }
 a { color: #42b983; }
 .home > label { display: block; margin-bottom: 1rem; font-weight: bold; }
-.search > a { color: #FC2121; text-decoration: none; margin-left: 1rem; display: inline-block; padding: .4rem; border: 3px solid;}
 #search { padding: .5rem; border: 1px solid #2c3e50; outline: none; border-radius: .8rem; }
 #search:focus { border-color: #42b983; }
 
