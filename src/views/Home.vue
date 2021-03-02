@@ -56,11 +56,11 @@ export default {
       });
     },
     search() {
+      if(!this.searchWord) return
       // const isHiragana = /^[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}]+$/mu
       const isHira = /^[ぁ-んー]*$/
       const kanaChangeWord = this.searchWord.match(isHira) ? this.hiraToKana(this.searchWord) : this.kanaToHira(this.searchWord)
       const searchArr = [this.searchWord, kanaChangeWord]
-      // console.log(searchArr)
       firebase.firestore().collection('yasai')
         .where('name','in',searchArr).get().then(snap=> {
           const searchedData = snap.docs.map(d=>d.data())[0]
