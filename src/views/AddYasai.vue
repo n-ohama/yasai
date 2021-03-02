@@ -1,5 +1,11 @@
 <template>
   <div class="addYasai">
+    <transition name="fade">
+      <div class="flash" v-show="isFlash">
+        作成完了しました!
+      </div>
+    </transition>
+    
     <h1>{{ $store.state.msg }}</h1>
     <div class="addArea">
       <label for="yasaiName">名前</label>
@@ -21,7 +27,8 @@ export default {
     return {
       yasaiName: '',
       first: '',
-      end: ''
+      end: '',
+      isFlash: false,
     }
   },
   methods: {
@@ -36,8 +43,13 @@ export default {
         this.yasaiName = ''
         this.first = ''
         this.end = ''
+        this.flashFn()
       })
     },
+    flashFn(){
+      this.isFlash = !this.isFlash
+      setTimeout(() => {this.isFlash = false}, 2000)
+    }
   }
 }
 </script>
@@ -55,4 +67,19 @@ border: 1px solid #2c3e50; border-radius: 1rem; margin-top: .3rem; }
 .yasaiKikan > input:focus { border-color:#42b983; }
 
 .addArea button { display: inline-block; margin-top: 2rem; }
+.flash {
+  background: #42b983;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: .3rem;
+  color: #fff;
+  border-radius: 1rem;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 </style>
