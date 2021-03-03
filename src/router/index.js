@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import AddYasai from '../views/AddYasai.vue'
+import UpdeYasai from '../views/UpdeYasai.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/add',
     name: 'AddYasai',
     component: AddYasai
+  },
+  {
+    path: '/update',
+    name: 'UpdeYasai',
+    component: UpdeYasai
   }
 ]
 

@@ -28,8 +28,10 @@
 
 <script>
 import firebase from '@/firebase.js'
+import { mixin } from '@/mixin.js'
 
 export default {
+  mixins: [mixin],
   name: 'Home',
   data() {
     return {
@@ -44,18 +46,6 @@ export default {
     }
   },
   methods: {
-    hiraToKana(str) {
-      return str.replace(/[\u3041-\u3096]/g, function(match) {
-        var chr = match.charCodeAt(0) + 0x60;
-        return String.fromCharCode(chr);
-      });
-    },
-    kanaToHira(str) {
-      return str.replace(/[\u30a1-\u30f6]/g, function(match) {
-        var chr = match.charCodeAt(0) - 0x60;
-        return String.fromCharCode(chr);
-      });
-    },
     search() {
       if(!this.searchWord) return
       // const isHiragana = /^[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}]+$/mu

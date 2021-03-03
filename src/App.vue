@@ -2,7 +2,8 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">検索</router-link> |
-      <router-link to="/add">追加</router-link>
+      <router-link to="/add">追加</router-link> |
+      <router-link to="/update" id="upde">変更</router-link>
     </div>
     <router-view/>
   </div>
@@ -25,6 +26,10 @@
   font-weight: bold;
   color: #2c3e50;
 }
+
+#upde { display: none; }
+#upde.router-link-exact-active { display: inline; }
+#nav #upde.router-link-exact-active span { text-decoration: none; color: #2c3e50; }
 
 #nav a.router-link-exact-active {
   color: #42b983;

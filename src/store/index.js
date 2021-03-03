@@ -11,6 +11,12 @@ export default new Vuex.Store({
       first: '',
       end: '',
       creatYear: ''
+    },
+    updateYasai: {
+      id: '',
+      name: '',
+      first: '',
+      end: ''
     }
   },
   mutations: {
@@ -18,11 +24,16 @@ export default new Vuex.Store({
       state.user = user
     },
     setResultData: (state, {seaName, seaFirst, seaEnd, seaCreYear}) => {
-      // const { name, first, end, creatYear } = state.resultData
       state.resultData.name = seaName
       state.resultData.first = seaFirst
       state.resultData.end = seaEnd
       state.resultData.creatYear = seaCreYear
+    },
+    setUpdateYasai: (state, {upName, upFirst, upEnd, docId}) => {
+      state.updateYasai.name = upName
+      state.updateYasai.first = upFirst
+      state.updateYasai.end = upEnd
+      state.updateYasai.id = docId
     }
   },
   actions: {
